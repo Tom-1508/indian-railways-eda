@@ -94,10 +94,11 @@ streamlit run app.py
 
 ---
 
-## 📜 Reports
+## 📜 Reports  
 
-📄 [Download PDF Report](assets\Indian Railways Data Analysis Report.pdf)
-📝 [Download DOCX Report](assets\Indian Railways Data Analysis Report.docx)
+📄 [Download PDF Report](assets/Indian%20Railways%20Data%20Analysis%20Report.pdf)  
+📝 [Download DOCX Report](assets/Indian%20Railways%20Data%20Analysis%20Report.docx)  
+
 
 ---
 
