@@ -12,19 +12,19 @@ from folium.plugins import HeatMap
 @st.cache_data
 def load_data():
     try:
-        stations_clean = pd.read_csv(r"cleaned_csv_datasets\stations_clean.csv")
+        stations_clean = pd.read_csv(r"stations_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading stations data: {e}")
         stations_clean = pd.DataFrame()
 
     try:
-        trains_clean = pd.read_csv(r"cleaned_csv_datasets\trains_clean.csv")
+        trains_clean = pd.read_csv(r"trains_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading trains data: {e}")
         trains_clean = pd.DataFrame()
 
     try:
-        schedules_clean = pd.read_csv(r"cleaned_csv_datasets\schedules_clean.csv")
+        schedules_clean = pd.read_csv(r"schedules_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading schedules data: {e}")
         schedules_clean = pd.DataFrame()
