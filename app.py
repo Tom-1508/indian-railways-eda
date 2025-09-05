@@ -12,19 +12,19 @@ from folium.plugins import HeatMap
 @st.cache_data
 def load_data():
     try:
-        stations_clean = pd.read_csv(r"data\stations_clean.csv")
+        stations_clean = pd.read_csv("data/stations_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading stations data: {e}")
         stations_clean = pd.DataFrame()
 
     try:
-        trains_clean = pd.read_csv(r"data\trains_clean.csv")
+        trains_clean = pd.read_csv("data/trains_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading trains data: {e}")
         trains_clean = pd.DataFrame()
 
     try:
-        schedules_clean = pd.read_csv(r"data\schedules_clean.csv")
+        schedules_clean = pd.read_csv("data/schedules_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading schedules data: {e}")
         schedules_clean = pd.DataFrame()
@@ -270,13 +270,13 @@ with tabs[4]:
 
         # Add Report Downloads
         try:
-            with open("assets\Indian Railways Data Analysis Report.pdf", "rb") as f:
+            with open("assets/Indian Railways Data Analysis Report.pdf", "rb") as f:
                 st.download_button("📄 Download Report (PDF)", f, "Final_Report.pdf")
         except Exception as e:
             st.warning(f"PDF Report not available: {e}")
 
         try:
-            with open("assets\Indian Railways Data Analysis Report.docx", "rb") as f:
+            with open("assets/Indian Railways Data Analysis Report.docx", "rb") as f:
                 st.download_button("📄 Download Report (DOCX)", f, "Final_Report.docx")
         except Exception as e:
             st.warning(f"DOCX Report not available: {e}")
