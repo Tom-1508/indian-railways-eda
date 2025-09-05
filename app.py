@@ -12,19 +12,19 @@ from folium.plugins import HeatMap
 @st.cache_data
 def load_data():
     try:
-        stations_clean = pd.read_csv(r"stations_clean.csv")
+        stations_clean = pd.read_csv(r"data\stations_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading stations data: {e}")
         stations_clean = pd.DataFrame()
 
     try:
-        trains_clean = pd.read_csv(r"trains_clean.csv")
+        trains_clean = pd.read_csv(r"data\trains_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading trains data: {e}")
         trains_clean = pd.DataFrame()
 
     try:
-        schedules_clean = pd.read_csv(r"schedules_clean.csv")
+        schedules_clean = pd.read_csv(r"data\schedules_clean.csv")
     except Exception as e:
         st.error(f"⚠️ Error loading schedules data: {e}")
         schedules_clean = pd.DataFrame()
@@ -260,13 +260,13 @@ with tabs[4]:
     try:
         if not stations_clean.empty:
             st.download_button("⬇️ Download Stations CSV",
-                               stations_clean.to_csv(index=False).encode('utf-8'), "stations_clean.csv","text/csv")
+                               stations_clean.to_csv(index=False).encode('utf-8'), r"data\stations_clean.csv","text/csv")
         if not trains_clean.empty:
             st.download_button("⬇️ Download Trains CSV",
-                               trains_clean.to_csv(index=False).encode('utf-8'), "trains_clean.csv","text/csv")
+                               trains_clean.to_csv(index=False).encode('utf-8'), r"data\trains_clean.csv","text/csv")
         if not schedules_clean.empty:
             st.download_button("⬇️ Download Schedules CSV",
-                               schedules_clean.to_csv(index=False).encode('utf-8'), "schedules_clean.csv","text/csv")
+                               schedules_clean.to_csv(index=False).encode('utf-8'), r"data\schedules_clean.csv","text/csv")
 
         # Add Report Downloads
         try:
@@ -282,3 +282,4 @@ with tabs[4]:
             st.warning(f"DOCX Report not available: {e}")
     except Exception as e:
         st.error(f"⚠️ Error in Network & Downloads tab: {e}")
+
